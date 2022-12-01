@@ -9,7 +9,7 @@ if (isset($_POST['validate'])) {
 
         $user_pseudo = htmlspecialchars($_POST['pseudo']);
         $user_lastname = htmlspecialchars($_POST['lastname']);
-        $user_firstname = htmlspecialchars($_POST['firsname']);
+        $user_firstname = htmlspecialchars($_POST['firstname']);
         $user_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
         $checkIfUserAlreadyExists = $bdd->prepare('SELECT pseudo FROM users WHERE pseudo = ?');
@@ -17,8 +17,10 @@ if (isset($_POST['validate'])) {
 
         if ($checkIfUserAlreadyExists->rowCount() === 0) {
 
-            $insertUserOnWebSite = $bdd->prepare('INSERT INTO users (pseudo, nom, prenom, mdp) VALUES (?,?,?;?) ');
+            $insertUserOnWebSite = $bdd->prepare('INSERT INTO users (pseudo, nom, prenom, mdp) VALUES (?,?,?,?) ');
             $insertUserOnWebSite->execute(array($user_pseudo, $user_lastname, $user_firstname, $user_password));
+
+            $getInfoOfThisUserReq = $bdd->prepare('SELECT id FROM users WHERE nom = ? AND prenom = ?');
 
         } else {
             $errorMsg = "L'utilisateur existe déjà sur le site";
