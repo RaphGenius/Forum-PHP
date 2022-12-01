@@ -19,16 +19,16 @@ if (isset($_POST['validate'])) {
 
         // Si le pseudo existe
         if ($checkIfUserExists->rowCount() > 0) {
-            $userInfo = $checkIfUserExists->fetch();
-            //On v
-            if (password_verify($user_password, $userInfo['mdp'])) {
+            $userInfos = $checkIfUserExists->fetch();
+            //On vérifie le mot de passe avec password_verify(le mot de passe inscrit, le mot de passe dans la bdd correspondant au pseudo)
+            if (password_verify($user_password, $userInfos['mdp'])) {
 
                 //Authentification de l'utilisateur et récupération des données dans des variable global
                 $_SESSION['auth'] = true;
-                $_SESSION['id'] = $userinfo['id'];
-                $_SESSION['lastname'] = $userinfo['nom'];
-                $_SESSION['firstname'] = $userinfo['prenom'];
-                $_SESSION['pseudo'] = $userinfo['pseudo'];
+                $_SESSION['id'] = $userInfos['id'];
+                $_SESSION['lastname'] = $userInfos['nom'];
+                $_SESSION['firstname'] = $userInfos['prenom'];
+                $_SESSION['pseudo'] = $userInfos['pseudo'];
 
                 //On redirige vers la page d'accueil
                 header('Location: index.php');
