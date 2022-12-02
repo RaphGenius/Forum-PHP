@@ -15,12 +15,12 @@ require("actions/users/securityAction.php");
         <?php
         if (isset($_SESSION["auth"])) {
             echo "Session id est bien la";
-            echo $_SESSION['auth'];
+            echo $_SESSION['pseudo'];
         } else {
             echo "pas de session id";
         }
         print_r($_SESSION);
-        echo $_SESSION["id"]; ?>
+        echo $_SESSION["pseudo"]; ?>
 
         <?php
         if (isset($errorMsg)) {

@@ -33,10 +33,10 @@ if (isset($_POST['validate'])) {
 
             //Authentification de l'utilisateur et récupération des données dans des variable global
             $_SESSION['auth'] = true;
-            $_SESSION['id'] = $userinfo['id'];
-            $_SESSION['lastname'] = $userinfo['nom'];
-            $_SESSION['firstname'] = $userinfo['prenom'];
-            $_SESSION['pseudo'] = $userinfo['pseudo'];
+            $_SESSION['id'] = $userInfos['id'];
+            $_SESSION['lastname'] = $userInfos['nom'];
+            $_SESSION['firstname'] = $userInfos['prenom'];
+            $_SESSION['pseudo'] = $userInfos['pseudo'];
 
             //On redirige l'utilisateur vers la page d'accueil
             header('Location: index.php');
