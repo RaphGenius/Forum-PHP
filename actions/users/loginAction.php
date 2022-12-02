@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 //On précise action/ car le code sera éxecuté dans signup.php, qui n'est pas dans le dossier action
 require('actions/datebase.php');
 

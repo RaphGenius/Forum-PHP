@@ -1,5 +1,4 @@
 <?php
-
 require("actions/datebase.php");
 
 // On verifie si l'id est présent dans l'url + s'il n'est pas vide 
@@ -21,7 +20,6 @@ if (isset($_GET['id']) and !empty($_GET["id"])) {
             $question_title = $questionInfos["titre"];
             $question_description = $questionInfos["description"];
             $question_content = $questionInfos["contenu"];
-            $question_date = $questionInfos['date_publication'];
 
             $question_description = str_replace("<br />", '', $question_description);
             $question_content = str_replace("<br />", '', $question_content);
@@ -30,15 +28,9 @@ if (isset($_GET['id']) and !empty($_GET["id"])) {
             $errorMsg = "Vous n'êtes pas l'auteur de cette question";
         }
 
-
-
-
-
     } else {
         $errorMsg = "Aucune question n'a été trouvée.";
     }
-
-
 
 } else {
     $errorMsg = "Aucune question n'a été trouvée.";

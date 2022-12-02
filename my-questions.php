@@ -1,6 +1,6 @@
 <?php
-require("actions/questions/myQuestionsAction.php");
 require("actions/users/securityAction.php");
+require("actions/questions/myQuestionsAction.php");
 ?>
 
 <!DOCTYPE html>

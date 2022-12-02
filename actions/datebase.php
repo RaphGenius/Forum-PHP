@@ -1,7 +1,6 @@
 <?php
 
 try {
-    session_start();
     //permet de se connecter à la bdd
     $bdd = new PDO('mysql:host=localhost;dbname=forum;charset=utf8;', 'root', 'root');
 

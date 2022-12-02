@@ -1,6 +1,7 @@
 <?php
-require("actions/questions/getInfoOfEditedQuestionAction.php");
 require("actions/users/securityAction.php");
+require("actions/questions/getInfoOfEditedQuestionAction.php");
+require("actions/questions/editQuestionAction.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
