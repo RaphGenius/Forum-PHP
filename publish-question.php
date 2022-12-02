@@ -12,16 +12,8 @@ require("actions/users/securityAction.php");
 <body>
     <?php include("includes/navbar.php"); ?>
     <form class="container" method="POST">
-        <?php
-        if (isset($_SESSION["auth"])) {
-            echo "Session id est bien la";
-            echo $_SESSION['pseudo'];
-        } else {
-            echo "pas de session id";
-        }
-        print_r($_SESSION);
-        echo $_SESSION["pseudo"]; ?>
 
+        <br />
         <?php
         if (isset($errorMsg)) {
             echo '<p>' . $errorMsg . "</p>";
