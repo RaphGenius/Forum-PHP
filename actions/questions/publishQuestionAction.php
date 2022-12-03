@@ -2,7 +2,6 @@
 
 
 require("actions/datebase.php");
-
 //Si le formulaire est validé
 if (isset($_POST['validate'])) {
     // Si toutes les champs ont été remplies
