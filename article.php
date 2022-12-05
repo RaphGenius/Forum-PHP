@@ -2,6 +2,7 @@
 session_start();
 require("actions/questions/showArticleContentAction.php");
 require("actions/questions/postAnswerAction.php");
+require("actions/questions/showAllAnswersOfQuestionAction.php");
 
 ?>
 
@@ -53,13 +54,31 @@ require("actions/questions/postAnswerAction.php");
 
             </form>
 
+            <?php
+            while ($answer = $getAnswerOfQuestion->fetch()) {
+            ?>
+            <div class="card mb-3">
+                <div class="card-header">
+                    <?= $answer['pseudo_auteur'] ?>
+                </div>
+                <div class="card-body">
+                    <?= $answer['contenu'] ?>
+                </div>
+            </div>
+
+            <?php
+            } ?>
+
+
+
+            <?php
+        }
+            ?>
+
+
 
         </section>
 
-
-        <?php
-        }
-        ?>
 
         <br>
 
