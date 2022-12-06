@@ -44,7 +44,9 @@ require("actions/users/showOneUserProfileAction.php")
                 <?= $question['description'] ?>
             </div>
             <div class="card-footer">
-                Par <?= $question['pseudo_auteur'] ?> le <?= $question['date_publication'] ?>
+                Par <a href="profil.php?id=<?= $question["id_auteur"] ?>">
+                    <?= $question['pseudo_auteur'] ?>
+                </a> le <?= $question['date_publication'] ?>
 
             </div>
         </div>

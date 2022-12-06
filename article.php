@@ -37,7 +37,8 @@ require("actions/questions/showAllAnswersOfQuestionAction.php");
             </p>
             <hr>
             <small>
-                <?="Créé par : " . $question_pseudo_author . " le " . $question_publication_date ?>
+                <?="Créé par : <a href='profil.php?id=" . $question_id_author . "'>" . $question_pseudo_author . "<a/>
+                    le " . $question_publication_date ?>
             </small>
         </section>
         <br>
