@@ -20,6 +20,9 @@
                 if (isset($_SESSION['auth'])) {
                 ?>
                 <li class="nav-item">
+                    <a class="nav-link" href="profil.php?id=<?= $_SESSION['id']; ?>">Mon profil</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="actions/users/logoutAction.php">Deconnexion</a>
                 </li>
                 <?php
